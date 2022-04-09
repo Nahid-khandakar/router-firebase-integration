@@ -1,14 +1,14 @@
-.link-style {
+nav {
     margin-top: 20px;
 }
 
-.link-style a {
+nav a {
     text-decoration: none;
     margin: 25px;
     font-size: 20px;
-    color: black;
+    color: black
 }
 
-.link-style a :hover {
-    color: crimson;
+nav :hover {
+    color: red;
 }
