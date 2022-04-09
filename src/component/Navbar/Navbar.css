@@ -1,0 +1,14 @@
+.link-style {
+    margin-top: 20px;
+}
+
+.link-style a {
+    text-decoration: none;
+    margin: 25px;
+    font-size: 20px;
+    color: black;
+}
+
+.link-style a :hover {
+    color: crimson;
+}
