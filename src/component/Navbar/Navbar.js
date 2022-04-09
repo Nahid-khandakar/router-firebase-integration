@@ -22,8 +22,6 @@ const Navbar = () => {
                     <Link to='/login'>LOG IN</Link>
             }
 
-
-
         </nav>
     );
 };
