@@ -1,11 +1,35 @@
 import React from 'react';
-import useFirebase from '../../hook/useFirebase';
+// import useFirebase from '../../hook/useFirebase';
 import './Login.css'
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { getAuth } from 'firebase/auth';
+import app from '../../firebase.init';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+
+const auth = getAuth(app);
 
 const Login = () => {
 
-    const { signInWithGoogle } = useFirebase()
+    // const { signInWithGoogle } = useFirebase()
 
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
+
+    //58.8 after log in go to main page
+
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    const from = location?.state.from.pathname || '/'
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(() => {
+                navigate(from, { replace: true })
+            })
+    }
+
+    //effect of 58.8
 
     return (
         <div className='loginForm'>
@@ -24,7 +48,7 @@ const Login = () => {
 
             </form>
 
-            <button onClick={signInWithGoogle} className='submit-btn-google'>Use Google Log In</button>
+            <button onClick={handleGoogleSignIn} className='submit-btn-google'>Use Google Log In</button>
         </div>
     );
 };

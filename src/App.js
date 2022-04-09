@@ -4,7 +4,9 @@ import './App.css';
 import Home from './component/Home/Home'
 import Login from './component/Login/Login'
 import Navbar from './component/Navbar/Navbar';
+import Order from './component/Order/Order';
 import Register from './component/Register/Register'
+import RequireAuth from './component/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -16,6 +18,10 @@ function App() {
         <Route path='/home' element={<Home />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Register />}></Route>
+
+        <Route path='/order' element={<RequireAuth>
+          <Order></Order>
+        </RequireAuth>}></Route>
 
       </Routes>
     </div>
