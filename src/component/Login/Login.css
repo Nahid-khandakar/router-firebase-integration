@@ -45,8 +45,8 @@
 }
 
 .submit-btn-google {
-    margin: 25px;
-    width: 150px;
+    margin: 0px;
+    width: auto;
     padding: 10px;
     background-color: white;
     color: #5B84B1FF;
